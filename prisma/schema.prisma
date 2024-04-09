@@ -1,0 +1,24 @@
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Board {
+  id            String @id @default(uuid())
+  orgId         String
+  title         String
+  imageId       String
+  imageThumbUrl String 
+  imageFullUrl  String 
+  imageUserName String 
+  imageLinkHTML String 
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
