@@ -14,7 +14,6 @@ import { InputType, ReturnType } from "./types";
 import { absoluteUrl } from "@/lib/utils";
 import { stripe } from "@/lib/stripe";
 
-
 const handler = async (data: InputType): Promise<ReturnType> => {
   const { userId, orgId } = auth();
   const user = await currentUser();
@@ -56,7 +55,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
             price_data: {
               currency: "USD",
               product_data: {
-                name: "Taskglide Pro",
+                name: "TaskGlide Pro",
                 description: "Unlimited boards for your organization"
               },
               unit_amount: 2000,
