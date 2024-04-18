@@ -14,11 +14,11 @@ import {
 import { useAction } from "@/hooks/use-action";
 import { Button } from "@/components/ui/button";
 import { createBoard } from "@/actions/create-board";
+import { useProModal } from "@/hooks/use-pro-modal";
 
 import { FormInput } from './form-input';
 import { FormSubmit } from "./form-submit";
 import { FormPicker } from "./form-picker";
-import { useProModal } from "@/hooks/use-pro-modal";
 
 interface FromPopoverProps {
   children: React.ReactNode;
@@ -46,6 +46,7 @@ export const FormPopover = ({
     onError: (error) => {
       console.log({ error });
       toast.error(error);
+      proModal.onOpen();
     }
   });
 
